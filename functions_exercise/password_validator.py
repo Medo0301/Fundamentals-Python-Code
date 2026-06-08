@@ -1,6 +1,3 @@
-import string
-
-
 def validate_length(password_: str):
     return 6 <= len(password_) <= 10
 
