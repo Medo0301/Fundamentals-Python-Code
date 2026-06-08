@@ -8,15 +8,15 @@ def num_to_list_ot_digit(num: int):
 
 
 def sum_odd_even_digit(list_digit: list):
-    odd_digit = []
-    even_digit = []
+    even_digit_sum = 0
+    odd_digit_sum = 0
     for digit in list_digit:
         if digit % 2 == 0:
-            even_digit.append(digit)
+            even_digit_sum += digit
         else:
-            odd_digit.append(digit)
+            odd_digit_sum += digit
 
-    return sum(even_digit), sum(odd_digit)
+    return even_digit_sum, odd_digit_sum
 
 
 number = int(input())
