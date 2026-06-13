@@ -37,10 +37,11 @@ while True:
         remove_lesson(schedule_lessons, lesson_title)
 
     elif action == "Swap" and lesson_title in schedule_lessons and command_parts[2] in schedule_lessons:
+        second_lesson = command_parts[2]
         exercise_first_lesson = f"{lesson_title}-Exercise"
-        exercise_second_lesson = f"{command_parts[2]}-Exercise"
+        exercise_second_lesson = f"{second_lesson}-Exercise"
 
-        swap_two_lessons(schedule_lessons, lesson_title, command_parts[2])
+        swap_two_lessons(schedule_lessons, lesson_title, second_lesson)
 
         if exercise_first_lesson in schedule_lessons and exercise_second_lesson in schedule_lessons:
             swap_two_lessons(schedule_lessons, exercise_first_lesson, exercise_second_lesson)
@@ -49,7 +50,7 @@ while True:
             schedule_lessons.insert(schedule_lessons.index(lesson_title) + 1, exercise_first_lesson)
         elif exercise_second_lesson in schedule_lessons:
             schedule_lessons.remove(exercise_second_lesson)
-            schedule_lessons.insert(schedule_lessons.index(command_parts[2]) + 1, exercise_second_lesson)
+            schedule_lessons.insert(schedule_lessons.index(second_lesson) + 1, exercise_second_lesson)
 
     elif action == "Exercise":
         exercise = f"{lesson_title}-Exercise"
