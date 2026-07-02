@@ -1,12 +1,12 @@
 resources = {}
 command = input()
 while command != "stop":
-    concurrent_resource = command
+    current_resource = command
     quantity = int(input())
-    if concurrent_resource not in resources:
-        resources[concurrent_resource] = quantity
+    if current_resource not in resources:
+        resources[current_resource] = quantity
     else:
-        resources[concurrent_resource] += quantity
+        resources[current_resource] += quantity
 
     command = input()
 
